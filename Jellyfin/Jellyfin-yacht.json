@@ -1,0 +1,57 @@
+[
+  {
+    "title": "",
+    "name": "jellyfin",
+    "image": "linuxserver/jellyfin",
+    "description": "",
+    "categories": [],
+    "platform": "linux",
+    "note": "",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "8096:8096/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/data/movies",
+        "bind": "movies"
+      },
+      {
+        "container": "/data/tv",
+        "bind": "tv"
+      },
+      {
+        "container": "/data/videos",
+        "bind": "videos"
+      },
+      {
+        "container": "/data/music",
+        "bind": "music"
+      }
+    ],
+    "env": [
+      {
+        "name": "",
+        "default": "1000",
+        "label": "PUID"
+      },
+      {
+        "name": "",
+        "default": "1000",
+        "label": "PGID"
+      },
+      {
+        "name": "",
+        "default": "Europe/Berlin",
+        "label": "TZ"
+      }
+    ],
+    "command": [],
+    "devices": [],
+    "labels": [],
+    "sysctls": [],
+    "cap_add": []
+  }
+]

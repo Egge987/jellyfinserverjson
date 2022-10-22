@@ -1,0 +1,67 @@
+{
+  "title": "Jellyfin",
+  "containers": [
+    {
+      "title": "",
+      "name": "jellyfin",
+      "image": "linuxserver/jellyfin",
+      "description": "",
+      "categories": [],
+      "platform": "linux",
+      "note": "",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "label": "WebUI",
+          "hport": "8096",
+          "cport": "8096",
+          "proto": "tcp"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/data/movies",
+          "bind": "/srv/dev-disk-by-uuid-e1daf418-9f70-4a17-98b3-3a4508c2eec5/NAStorage/perFolder/docker/jellyfin/movies",
+          "variable": "movies"
+        },
+        {
+          "container": "/data/tv",
+          "bind": "/srv/dev-disk-by-uuid-e1daf418-9f70-4a17-98b3-3a4508c2eec5/NAStorage/perFolder/docker/jellyfin/tv",
+          "variable": "tv"
+        },
+        {
+          "container": "/data/videos",
+          "bind": "/srv/dev-disk-by-uuid-e1daf418-9f70-4a17-98b3-3a4508c2eec5/NAStorage/perFolder/docker/jellyfin/videos",
+          "variable": "videos"
+        },
+        {
+          "container": "/data/music",
+          "bind": "/srv/dev-disk-by-uuid-e1daf418-9f70-4a17-98b3-3a4508c2eec5/NAStorage/perFolder/docker/jellyfin/music",
+          "variable": "music"
+        }
+      ],
+      "env": [
+        {
+          "name": "",
+          "default": "1000",
+          "label": "PUID"
+        },
+        {
+          "name": "",
+          "default": "1000",
+          "label": "PGID"
+        },
+        {
+          "name": "",
+          "default": "Europe/Berlin",
+          "label": "TZ"
+        }
+      ],
+      "command": [],
+      "devices": [],
+      "labels": [],
+      "sysctls": [],
+      "cap_add": []
+    }
+  ]
+}
